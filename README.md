@@ -1,5 +1,5 @@
-[![scraper](https://github.com/kobesar/ebaytracker/actions/workflows/scrape.yml/badge.svg)](https://github.com/kobesar/ebaytracker/actions/workflows/scrape.yml)
+[![scraper](https://github.com/kobesar/tfpscrape/actions/workflows/scrape.yml/badge.svg)](https://github.com/kobesar/tfpscrape/actions/workflows/scrape.yml)
 
-# Scrapes price data from eBay
+# Scrapes the locations from timeforpickleball.com 
 
-Check back tomorrow to see if this worked...
+This script refreshes once a month, creating a new data file for every location listed on the `locations` section of the site. This data file resides in the `data` folder.

@@ -1,4 +1,4 @@
-name: run scraper.py
+name: run scrape.py
 
 on:
   schedule:
