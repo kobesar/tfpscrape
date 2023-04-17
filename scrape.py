@@ -23,4 +23,6 @@ for title in soup.find_all('h3', {'class': 'wsite-content-title'}):
     values.append(i.text.replace('\n', '').replace('\r', '').strip())
   data.append(dict(zip(keys, values)))
 
-pd.DataFrame(data).to_csv('data/data.csv')
+data = pd.DataFrame(data)
+data['state'] = 'Washington'
+data.to_csv('data/data.csv')
