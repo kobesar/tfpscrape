@@ -1,8 +1,8 @@
-name: run scrape.py
+name: run scrape2.R
 
 on:
   schedule:
-    - cron: '0 0 1 * *' # runs at 12:00 UTC everyday
+    - cron: '0 0 1 * *' # runs at 12:00 UTC once a month
 
 jobs:
   build:
@@ -12,18 +12,17 @@ jobs:
       - name: checkout repo content
         uses: actions/checkout@v3 # checkout the repository content to github runner
 
-      - name: setup python
-        uses: actions/setup-python@v4
+      - name: setup R
+        uses: r-lib/actions/setup-r@v1
         with:
-          python-version: '3.9' # install the python version needed
+          r-version: '4.1.0' # install the R version needed
           
-      - name: install python packages
+      - name: install R packages
         run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
+          Rscript -e 'install.packages(c("tidyverse", "rvest"))'
           
-      - name: execute py script # run main.py
-        run: python scrape.py
+      - name: execute R script # run scrape2.R
+        run: Rscript scrape2.R
           
       - name: commit files
         run: |
